@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite parallel="tests" name="Suite">
+
+	 <listeners>
+		<listener class-name="report.TestListener" />
+	</listeners> 
+	
+	<test name="Test Exmaple">
+		<classes>
+			<class name="org.douglas.SearchTest" />
+		</classes>
+	</test> 
+</suite> <!-- Suite -->

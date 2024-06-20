@@ -40,8 +40,6 @@ public class WebDriverManager {
                     driver = new ChromeDriver();
             }
             driver.manage().window().maximize();
-            //driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-            //driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
         } catch (Exception e){
             e.printStackTrace();
         }
@@ -50,7 +48,7 @@ public class WebDriverManager {
 
     public static void quitBrowser() {
         try {
-            Thread.sleep(5000);
+            Thread.sleep(2000);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

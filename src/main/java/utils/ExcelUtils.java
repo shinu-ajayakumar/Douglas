@@ -24,13 +24,12 @@ public class ExcelUtils {
             Sheet sheet = workbook.getSheet(sheetName);
             DataFormatter formatter = new DataFormatter();
 
-            // Find the row with the given row name
-            Row headerRow = sheet.getRow(0); // Assumed to be the first row
+            Row headerRow = sheet.getRow(0);
             Row targetRow = null;
 
             for (Row row : sheet) {
-                if (row.getRowNum() == 0) continue; // Skip header row
-                String currentRowName = formatter.formatCellValue(row.getCell(0)); // Assuming row name is in the first column
+                if (row.getRowNum() == 0) continue;
+                String currentRowName = formatter.formatCellValue(row.getCell(0));
                 if (currentRowName.equals(rowName)) {
                     targetRow = row;
                     break;
@@ -41,7 +40,6 @@ public class ExcelUtils {
                 throw new IllegalArgumentException("Row name not found: " + rowName);
             }
 
-            // Iterate through the columns and store the values in the map
             for (int i = 0; i < headerRow.getLastCellNum(); i++) {
                 String columnName = formatter.formatCellValue(headerRow.getCell(i));
                 String cellValue = formatter.formatCellValue(targetRow.getCell(i));
